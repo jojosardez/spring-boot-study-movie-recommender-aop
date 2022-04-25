@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Configuration;
 public class AccessCheckAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("execution(* io.datajek.springaop.movierecommenderaop.*.*(..))")
+    //@Before("execution(* io.datajek.springaop.movierecommenderaop.*.*(..))")
+    @Before("io.datajek.springaop.movierecommenderaop.JoinPointConfig.movieBeanPointcut()")
     public void userAccess(JoinPoint joinPoint) {
         logger.info("Intercepted call before execution: {}", joinPoint);
     }
