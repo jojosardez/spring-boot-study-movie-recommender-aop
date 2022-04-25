@@ -8,6 +8,7 @@ public class FilteringTechnique1 {
     @Autowired
     private Movie movie;
 
+    @MeasureTime
     public String contentBasedFiltering() {
         String movieDetails = movie.getMovieDetails();
         return movieDetails;

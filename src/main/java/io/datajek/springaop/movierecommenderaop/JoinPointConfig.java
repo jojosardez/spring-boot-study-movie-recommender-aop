@@ -17,4 +17,7 @@ public class JoinPointConfig {
     //for a particular bean
     @Pointcut("bean(movie*)")
     public void movieBeanPointcut() {}
+
+    @Pointcut("@annotation(io.datajek.springaop.movierecommenderaop.MeasureTime)")
+    public void measureTimeAnnotation() {}
 }

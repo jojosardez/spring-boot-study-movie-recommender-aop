@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Configuration;
 public class ExecutionTimeAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Around("execution(* io.datajek.springaop.movierecommenderaop..*.*(..))")
+    //@Around("execution(* io.datajek.springaop.movierecommenderaop..*.*(..))")
+    @Around("io.datajek.springaop.movierecommenderaop.JoinPointConfig.measureTimeAnnotation()")
     public Object calculateExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         //note start time
         long startTime = System.currentTimeMillis();
